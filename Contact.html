@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://kit.fontawesome.com/0eb0a308b6.js" crossorigin="anonymous"></script>
+    <!-- Add EmailJS SDK -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <title>Contact Us - Dessert Shop</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Additional styles for form states */
+        .success-message, .error-message {
+            display: none;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            text-align: center;
+        }
+        
+        .success-message {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        
+        .error-message {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+        
+        .form-loading {
+            opacity: 0.7;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <a href="index.html" class="logo"><img src="images/Dessert.png" alt="Dessert Logo" /></a>
+        <nav class="navbar">
+             <a href="Home.html">Home</a>
+             <a href="Cakes.html">Cakes</a>
+             <a href="Other Desserts.html">Other Desserts</a>
+             <a href="New arrivals.html">New Arrivals</a>
+             <a href="About us.html">About</a>
+             <a href="Contact.html">Contact</a>
+        </nav>
+    </header>
+    
+    <!-- Contact Hero Section -->
+    <section class="about-hero">
+        <div class="content">
+            <h3>Get in Touch</h3>
+            <p>We'd love to hear from you! Whether you have a question about our desserts, need help with an order, or want to collaborate, our team is ready to assist you.</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <h1 class="heading">Contact <span>Us</span></h1>
+        <div class="row">
+            <div class="map">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2485.686030254153!2d-0.1272003230493288!3d51.50732221747069!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487604ce3941eb1f%3A0x1a5b356eaef5030!2sLondon%20Eye!5e0!3m2!1sen!2suk!4v1691428901233!5m2!1sen!2suk" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+            <form class="form" id="contactForm">
+                <div class="success-message" id="successMessage">
+                    Thank you for your message! We'll get back to you soon. A confirmation email has been sent to your email address.
+                </div>
+                <div class="error-message" id="errorMessage">
+                    There was a problem sending your message. Please try again later.
+                </div>
+                <div class="inputBox">
+                    <input type="text" id="name" name="name" required>
+                    <label for="name">Your Name</label>
+                </div>
+                <div class="inputBox">
+                    <input type="email" id="email" name="email" required>
+                    <label for="email">Your Email</label>
+                </div>
+                <div class="inputBox">
+                    <input type="text" id="subject" name="subject" required>
+                    <label for="subject">Subject</label>
+                </div>
+                <div class="inputBox">
+                    <textarea id="message" name="message" required cols="30" rows="10"></textarea>
+                    <label for="message">Your Message</label>
+                </div>
+                <button type="submit" class="btn" id="submitBtn">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Contact Info Section -->
+    <section class="contact-info">
+        <div class="box-container">
+            <div class="box">
+                <i class="fas fa-phone"></i>
+                <h3>Phone</h3>
+                <p>+44 123 456 7890</p>
+                <p>+44 987 654 3210</p>
+            </div>
+            <div class="box">
+                <i class="fas fa-envelope"></i>
+                <h3>Email</h3>
+                <p>info@borcelles.com</p>
+                <p>orders@borcelles.com</p>
+            </div>
+            <div class="box">
+                <i class="fas fa-map-marker-alt"></i>
+                <h3>Address</h3>
+                <p>123 Sweet Street, London, UK</p>
+            </div>
+            <div class="box">
+                <i class="fas fa-clock"></i>
+                <h3>Opening Hours</h3>
+                <p>Monday-Friday: 9am - 8pm</p>
+                <p>Weekend: 10am - 6pm</p>
+            </div>
+        </div>
+        
+        <script>
+            // Initialize EmailJS with your public key
+            (function() {
+                // Replace 'YOUR_PUBLIC_KEY' with your actual EmailJS public key
+                emailjs.init("xAwUfJHXa35yW-BAV");
+            })();
+            
+            // Wait for the DOM to be   fully loaded
+            document.addEventListener('DOMContentLoaded', function() {
+                const contactForm = document.getElementById('contactForm');
+                const successMessage = document.getElementById('successMessage');
+                const errorMessage = document.getElementById('errorMessage');
+                const submitBtn = document.getElementById('submitBtn');
+                
+                // Hide messages initially
+                successMessage.style.display = 'none';
+                errorMessage.style.display = 'none';
+                
+                // Form submission handler
+                contactForm.addEventListener('submit', function(event) {
+                    event.preventDefault();
+                    
+                    // Show loading state
+                    contactForm.classList.add('form-loading');
+                    submitBtn.textContent = 'Sending...';
+                    
+                    // Send form data using EmailJS
+                    emailjs.sendForm('service_66jffgy', 'template_npwkr4j', this)
+                        .then(function() {
+                            // Show success message
+                            successMessage.style.display = 'block';
+                            errorMessage.style.display = 'none';
+                            
+                            // Reset form
+                            contactForm.reset();
+                        }, function(error) {
+                            // Show error message
+                            errorMessage.style.display = 'block';
+                            successMessage.style.display = 'none';
+                            console.error('Failed to send message:', error);
+                        })
+                        .finally(function() {
+                            // Remove loading state
+                            contactForm.classList.remove('form-loading');
+                            submitBtn.textContent = 'Send Message';
+                        });
+                });
+            });
+        </script>
+    </section>
+</body>
+</html>

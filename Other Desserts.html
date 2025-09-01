@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>       
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://kit.fontawesome.com/0eb0a308b6.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Other Desserts</title>
+    <link rel="stylesheet" href="style.css">    
+ </head>
+ <body>
+    <header class="header">
+        <a href="index.html" class="logo"><img src="images/Dessert.png" alt="Dessert Logo" /></a>
+        <nav class="navbar">
+             <a href="Home.html">Home</a>
+             <a href="Other Desserts.html">Other Desserts</a>
+             <a href="Cakes.html">Cakes</a>
+             <a href="New arrivals.html">New Arrivals</a>
+             <a href="About us.html">About</a>
+             <a href="contact.html">Contact</a>
+        </nav>
+        <div class="icons">
+            <div class="search-icon"><i class="fa-solid fa-magnifying-glass"></i></div>
+            <div class="cart-icon">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <span class="cart-count">0</span>
+            </div>
+            <div class="menu-icon"><i class="fa-solid fa-bars"></i></div>
+        </div>
+        <div class="search-form">
+            <input type="search" name="search" id="search-box" placeholder="search here...">
+            <label for="search-box" class="fa-solid fa-magnifying-glass"></label>
+        </div>
+
+        <div class="cart-items-container">
+            <div class="empty-cart-message">Your cart is empty</div>
+            <!-- Cart items will be added dynamically -->
+            <div class="cart-total">Total: <span>£0.00</span></div>
+            <a href="checkout.html" class="btn" style="width: 100%; text-align: center; margin-top: 1.5rem;">Order Now!</a>
+        </div>
+    </header>
+    
+    <!-- Cart Notification -->
+    <div class="cart-notification">
+        Item added to cart successfully!
+    </div>
+    
+    <section class="home" id="home">
+        <div class="hero">
+            <h3>Come and try our other desserts we sell!</h3>
+            <p>Step into our mouth-watering tasty Desserts where you, your friends and family 
+                can never get enough with! </p>
+        </div>
+    </section>
+    
+    <section class="Special" id="Special">
+        <h1 class="heading">Other Desserts</h1>
+        <div class="wrapper">
+            <!--Cupcake Item one-->
+            <div class="Special-Card">
+                <img src="images/Mini Fruit Pies.jpg">
+                <h3>Fruit-Mini-Pie</h3>
+                <div class="price">£15.50</div>
+                <div class="add-to-cart-btn" data-name="Mini-Fruit-Pie" data-price="15.50" 
+                data-image="images/Mini Fruit Pies.jpg">Add to Cart</div>
+            </div>
+            <!--Cupcake Item two-->
+            <div class="Special-Card">
+                <img src="images/Straberry pie.jpg">
+                <h3>Whipped cream Strawberry Pie</h3>
+                <div class="price">£11.40</div>
+                <div class="add-to-cart-btn" data-name="Whipped cream Strawberry Pie" data-price="11.40" 
+                data-image="images/Straberry pie.jpg">Add to Cart</div>
+            </div>
+            <!--Cupcake Item three-->
+            <div class="Special-Card">
+                <img src="images/Lemon Marange Pie.jpg">
+                <h3>Lemon meringue</h3>
+                <div class="price">£5.50</div>
+                <div class="add-to-cart-btn" data-name="Lemon meringue" data-price="5.50" 
+                data-image="images/Lemon Marange Pie.jpg">Add to Cart</div>
+            </div>
+            <!--Cupcake Item four-->
+            <div class="Special-Card">
+                <img src="images/Chocolate pie.jpg">
+                <h3>Chcolate Pie</h3>
+                <div class="price">£14.50</div>
+                <div class="add-to-cart-btn" data-name="Chocolate Pie" data-price="14.50" 
+                data-image="images/Chocolate Pie.jpg">Add to Cart</div>
+            </div>
+            <!--Cupcake Item five-->
+            <div class="Special-Card">
+                <img src="images/Chocolate cupcakes.jpeg">
+                <h3>M & M Cupcakes</h3>
+                <div class="price">£12.50/-</div>
+                <div class="add-to-cart-btn" data-name="M & M Cupcakes" data-price="12.50" 
+                data-image="images/Chocolate cupcakes.jpeg">Add to Cart</div>
+            </div>
+            <!--Cupcake Item six-->
+            <div class="Special-Card">
+                <img src="images/Caramel cupcakes.jpg">
+                <h3>Caramel Cupcakes</h3>
+                <div class="price">£10.50/-</div>
+                <div class="add-to-cart-btn" data-name="Caramel Cupcakes" data-price="10.50" 
+                data-image="images/Caramel cupcakes.jpg">Add to Cart</div>
+            </div>
+            <!--Brownie item seven-->
+            <div class="Special-Card">
+                <img src="images/Strawberry brownines.jpg">
+                <h3>Strawberry Brownies</h3>
+                <div class="price">£10.50/-</div>
+                <div class="add-to-cart-btn" data-name="Strawberry Brownies" data-price="10.50" 
+                data-image="images/Strawberry brownines.jpg">Add to Cart</div>
+            </div>
+            <!--Brownie item eight-->
+            <div class="Special-Card">
+                <img src="images/Rasberry Brownies.jpg">
+                <h3>Raspberry Brownies</h3>
+                <div class="price">£10.50/-</div>
+                <div class="add-to-cart-btn" data-name="Raspberry Brownies" data-price="10.50" 
+                data-image="images/Rasberry Brownies.jpg">Add to Cart</div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Initialize cart array
+        let cart = [];
+        
+        // Get DOM elements
+        const cartItemsContainer = document.querySelector('.cart-items-container');
+        const emptyCartMessage = document.querySelector('.empty-cart-message');
+        const cartCount = document.querySelector('.cart-count');
+        const cartNotification = document.querySelector('.cart-notification');
+        const cartIcon = document.querySelector('.cart-icon');
+        const searchIcon = document.querySelector('.search-icon');
+        const searchForm = document.querySelector('.search-form');
+        
+        // Toggle cart visibility
+        cartIcon.addEventListener('click', () => {
+            cartItemsContainer.classList.toggle('active');
+            searchForm.classList.remove('active');
+        });
+        
+        // Toggle search form visibility
+        searchIcon.addEventListener('click', () => {
+            searchForm.classList.toggle('active');
+            cartItemsContainer.classList.remove('active');
+        });
+        
+        // Add to cart functionality
+        document.querySelectorAll('.add-to-cart-btn').forEach(button => {
+            button.addEventListener('click', (e) => {
+                const name = e.target.getAttribute('data-name');
+                const price = parseFloat(e.target.getAttribute('data-price'));
+                const image = e.target.getAttribute('data-image');
+                
+                addToCart(name, price, image);
+                
+                // Show notification
+                cartNotification.classList.add('show');
+                setTimeout(() => {
+                    cartNotification.classList.remove('show');
+                }, 2000);
+            });
+        });
+
+        // Add item to cart
+        function addToCart(name, price, image) {
+            const existingItem = cart.find(item => item.name === name);
+            
+            if (existingItem) {
+                existingItem.quantity += 1;
+            } else {
+                cart.push({
+                    name,
+                    price,
+                    image,
+                    quantity: 1
+                });
+            }
+            
+            updateCartCount();
+            updateCartDisplay();
+        }
+
+        // Update cart count display
+        function updateCartCount() {
+            const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
+            cartCount.textContent = totalItems;
+        }
+
+        // Update cart display
+        function updateCartDisplay() {
+            // Clear current cart items except the empty message and total
+            const cartItems = cartItemsContainer.querySelectorAll('.cart-item');
+            cartItems.forEach(item => item.remove());
+            
+            if (cart.length === 0) {
+                emptyCartMessage.style.display = 'block';
+                document.querySelector('.cart-total').style.display = 'none';
+                document.querySelector('.cart-items-container .btn').style.display = 'none';
+            } else {
+                emptyCartMessage.style.display = 'none';
+                document.querySelector('.cart-total').style.display = 'block';
+                document.querySelector('.cart-items-container .btn').style.display = 'block';
+                
+                let total = 0;
+                
+                // Add each item to cart display
+                cart.forEach(item => {
+                    const itemTotal = item.price * item.quantity;
+                    total += itemTotal;
+                    
+                    const cartItemElement = document.createElement('div');
+                    cartItemElement.classList.add('cart-item');
+                    cartItemElement.innerHTML = `
+                        <span class="fas fa-times remove-item"></span>  
+                        <img src="${item.image}" alt="${item.name}" />
+                        <div class="content">
+                            <h3>${item.name}</h3>
+                            <div class="price">£${item.price.toFixed(2)}</div>
+                            <div class="quantity-controls">
+                                <div class="quantity-btn decrement">-</div>
+                                <span class="item-quantity">${item.quantity}</span>
+                                <div class="quantity-btn increment">+</div>
+                            </div>
+                            <div class="item-total">Total: £${itemTotal.toFixed(2)}</div>
+                        </div>
+                    `;
+                    
+                    cartItemsContainer.insertBefore(cartItemElement, document.querySelector('.cart-total'));
+                    
+                    // Add event listeners for quantity controls
+                    const decrementBtn = cartItemElement.querySelector('.decrement');
+                    const incrementBtn = cartItemElement.querySelector('.increment');
+                    const removeBtn = cartItemElement.querySelector('.remove-item');
+                    
+                    decrementBtn.addEventListener('click', () => {
+                        if (item.quantity > 1) {
+                            item.quantity -= 1;
+                            updateCartDisplay();
+                        }
+                    });
+                    
+                    incrementBtn.addEventListener('click', () => {
+                        item.quantity += 1;
+                        updateCartDisplay();
+                    });
+                    
+                    removeBtn.addEventListener('click', () => {
+                        cart = cart.filter(cartItem => cartItem.name !== item.name);
+                        updateCartCount();
+                        updateCartDisplay();
+                    });
+                });
+                
+                // Update total
+                document.querySelector('.cart-total span').textContent = `£${total.toFixed(2)}`;
+            }
+        }
+        
+        // Close cart when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!cartItemsContainer.contains(e.target) && !cartIcon.contains(e.target)) {
+                cartItemsContainer.classList.remove('active');
+            }
+            if (!searchForm.contains(e.target) && !searchIcon.contains(e.target)) {
+                searchForm.classList.remove('active');
+            }
+        });
+    </script>
+ </body>
+</html>

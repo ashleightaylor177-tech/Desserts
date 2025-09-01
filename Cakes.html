@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>       
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://kit.fontawesome.com/0eb0a308b6.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <title> Cakes Page</title>    
+ </head>
+ <body>
+    <header class="header">
+        <a href="index.html" class="logo"><img src="images/Dessert.png" alt="Dessert Logo" /></a>
+        <nav class="navbar">
+             <a href="Home.html">Home</a>
+             <a href="Other Desserts.html">Other Desserts</a>
+             <a href="Cakes.html">Cakes</a>
+             <a href="New arrivals.html">New Arrivals</a>
+             <a href="About us.html">About</a>
+             <a href="contact.html">Contact</a>
+        </nav>
+        <div class="icons">
+            <div class="search-icon"><i class="fa-solid fa-magnifying-glass"></i></div>
+            <div class="cart-icon">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <span class="cart-count">0</span>
+            </div>
+            <div class="menu-icon"><i class="fa-solid fa-bars"></i></div>
+        </div>
+        <div class="search-form">
+            <input type="search" name="search" id="search-box" placeholder="search here...">
+            <label for="search-box" class="fa-solid fa-magnifying-glass"></label>
+        </div>
+
+        <div class="cart-items-container">
+            <div class="empty-cart-message">Your cart is empty</div>
+            <!-- Cart items will be added dynamically -->
+            <div class="cart-total">Total: <span>£0.00</span></div>
+            <a href="checkout.html" class="btn" style="width: 100%; text-align: center; margin-top: 1.5rem;">Order Now!</a>
+        </div>
+
+        <div class="cart-items-container">
+        <div class="cart-item">
+            <span class="fas fa-times"></span>  
+            <img src="images/flamingo-cakes.jpg" alt="Flamingo Cake" />
+            <div class="content">
+                <h3>Flamingo Cake</h3>
+                <div class="price">£22.30</div>
+            </div>
+        </div>
+            <div class="cart-item">
+            <span class="fas fa-times"></span>  
+            <img src="images/red velvet pie.jpg" alt="Raspberry Pie" />
+            <div class="content">
+                <h3>Raspberry Pie</h3>
+                <div class="price">£21.10</div>
+            </div>
+        </div>
+        <div class="cart-item">
+            <span class="fas fa-times"></span>  
+            <img src="images/raspberry-cupcakes.jpg" alt="Raspberry Cupcakes" />
+            <div class="content">
+                <h3>Raspberry Cupcakes</h3>
+                <div class="price">£22.30</div>
+            </div>
+        </div>
+        <div class="cart-item">
+            <span class="fas fa-times"></span>  
+            <img src="images/Strawberry brownines.jpg">
+            <div class="content">
+                <h3>Strawberry Brownies</h3>
+                <div class="price">£20.30</div>
+            </div>
+        </div>
+        <a href="checkout.html" class="btn">Order Now!</a>
+    </div>
+    </header>
+    <section class="home" id="home">
+        <div class="hero">
+            <h3>Buy these heavenly sweet Treats</h3>
+            <p>Step into the rosy, irresistible world of Borcelle's Pancake, 
+                where our signature pink theme sweetens every moment. </p>
+        </div>
+    </section>
+<section class="Special" id="Special">
+   <h1 class="heading">Our Cakes</h1>
+    <div class="wrapper">
+        <!--Pie Item one-->
+        <div class="Special-Card">
+        <img src="images/Baby Shower.jpg">
+        <h3>Baby Shower Cake</h3>
+        <div class="price">£15.50/-</div>
+         <div class="add-to-cart-btn" data-name="Baby Shower Cake" data-price="15.50" 
+         data-image="images/Baby Shower.jpg">Add to Cart</div>
+    
+        </div>
+        <!--Pie Item two-->
+        <div class="Special-Card">
+        <img src="images/Birthday.jpg">
+        <h3>Birthday Cake</h3>
+        <div class="price">£11.40/-</div>
+      <div class="add-to-cart-btn" data-name="Birthday Cake" data-price="11.40" 
+      data-image="images/Birthday.jpg">Add to Cart</div>
+        </div>
+        <!--Pie Item three-->
+        <div class="Special-Card">
+        <img src="images/Rainbow.jpg">
+        <h3>Rainbow Cake</h3>
+        <div class="price">£5.50/-</div>
+                 <div class="add-to-cart-btn" data-name="Rainbow Cake" data-price="5.50" 
+                 data-image="images/Rainbow.jpg">Add to Cart</div>
+        </div>
+            <!--Pie Item four-->
+        <div class="Special-Card">
+        <img src="images/Wedding.jpg">
+        <h3>Wedding Cakes</h3>
+        <div class="price">£14.50/-</div>
+      <div class="add-to-cart-btn" data-name="Wedding Cakes" data-price="14.50" 
+      data-image="images/Wedding.jpg">Add to Cart</div>
+        </div>
+            <!--Pie Item five-->
+        <div class="Special-Card">
+        <img src="images/Background - Copy.jpg">
+        <h3>Sweet 16 Cakes</h3>
+        <div class="price">£12.50/-</div>
+        <div class="add-to-cart-btn" data-name="Sweet 16" data-price="10.50" 
+        data-image= "images/Background.jpg">Add to Cart</div>
+        </div>
+        <!--Pie Item six-->
+        <div class="Special-Card">
+        <img src="images/Bride - Copy.jpg">
+        <h3>Bridal Shower Cake</h3>
+        <div class="price">£10.50/-</div>
+       <div class="add-to-cart-btn" data-name="Bridal Shower cake" data-price="10.50" 
+       data-image="images/Bride.jpg">Add to Cart</div>
+        </div>
+        <!--Pie item seven-->
+        <div class="Special-Card">
+        <img src="images/Anniversary - Copy.jpg">
+        <h3>Anniversary cakes</h3>
+        <div class="price">£10.50/-</div>
+       <div class="add-to-cart-btn" data-name="Anniversary Cakes" data-price="10.50" 
+       data-image="images/Anniversary.jpg">Add to Cart</div>
+        </div>
+        <!--Pie item eight-->
+        <div class="Special-Card">
+        <img src="images/mother's day.jpg">
+        <h3>Mother's day Special</h3>
+        <div class="price">£10.50/-</div>
+       <div class="add-to-cart-btn" data-name="Mother's day Special" data-price="10.50" 
+       data-image="images/mother's day.jpg">Add to Cart</div>
+        </div>
+        </div>
+    <script src="script.js"></script>
+ </body>
+</html>
